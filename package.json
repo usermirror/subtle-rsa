@@ -1,0 +1,32 @@
+{
+  "name": "subtle-rsa",
+  "version": "0.1.2",
+  "description": "Simple wrapper around SubtleCrypto RSA implementation",
+  "main": "lib/index.js",
+  "source": "src/index.ts",
+  "module": "lib/index.mjs",
+  "umd:main": "lib/index.umd.js",
+  "repository": "https://github.com/usermirror/subtle-rsa.git",
+  "author": "UserMirror, Inc. <open@usermirror.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ava",
+    "clean": "rm -rf lib",
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "ava": "^1.0.1",
+    "microbundle": "^0.9.0",
+    "ts-node": "^7.0.1"
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  }
+}
