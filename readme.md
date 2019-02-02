@@ -10,7 +10,7 @@
 <br/>
 
 <p align="center">
-  <a href="https://unpkg.com/subtle-rsa/lib/index.js"><img src="https://img.badgesize.io/https://unpkg.com/subtle-rsa/lib/index.js?compression=gzip&amp;label=subtle--rsa"></a>
+  <a href="https://unpkg.com/subtle-rsa@^0.1/lib/index.js"><img src="https://img.badgesize.io/https://unpkg.com/subtle-rsa@^0.1/lib/index.js?compression=gzip&amp;label=subtle--rsa"></a>
   <a href="https://www.npmjs.com/package/subtle-rsa"><img src="https://img.shields.io/npm/v/subtle-rsa.svg?maxAge=3600&label=subtle-rsa&colorB=007ec6"></a>
 </p>
 <br/>
