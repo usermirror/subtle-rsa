@@ -1,6 +1,6 @@
 {
   "name": "subtle-rsa",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple wrapper around SubtleCrypto RSA implementation",
   "main": "lib/index.js",
   "source": "src/index.ts",

@@ -30,11 +30,31 @@ class SubtleRSA {
       window.btoa(encodeURIComponent(JSON.stringify(valueToEncrypt)))
     )
 
-    window.crypto.subtle.encrypt(
+    return await window.crypto.subtle.encrypt(
       { name: 'RSA-OAEP' },
       this._publicKey,
       serializedValue
     )
+  }
+
+  decrypt = async (valueToDecrypt: any) => {
+    if (!this._privateKey) {
+      throw new Error('SubtleRSA.decrypt(): missing private key')
+    }
+
+    let decryptedValue = await window.crypto.subtle.decrypt(
+      { name: 'RSA-OAEP' },
+      this._privateKey,
+      valueToDecrypt
+    )
+
+    try {
+      return JSON.parse(
+        decodeURIComponent(window.atob(fromArrayBuffer(decryptedValue)))
+      )
+    } catch (err) {
+      throw err
+    }
   }
 
   importPublicKey = async (jwk: string) => {
@@ -71,6 +91,10 @@ class SubtleRSA {
     this._privateKey = keyMaterials.privateKey
     this._publicKey = keyMaterials.publicKey
   }
+}
+
+function fromArrayBuffer(buf) {
+  return String.fromCharCode.apply(null, new Uint16Array(buf))
 }
 
 function toArrayBuffer(str: string) {
